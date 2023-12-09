@@ -1,10 +1,23 @@
-const routes = require('./src/routes/routes');
-app.use("/api/users", routes);
+// routes.js
 
-pool.query("SELECT NOW()", (err, res) => {
-  if (err) {
-    console.error("*** Erro ao conectar ao banco de dados ***", err);
-  } else {
-    console.log("Conexão realizada com sucesso ao banco de dados");
-  }
-});
+const express = require('express');
+const router = express.Router();
+const swaggerUi = require('swagger-ui-express');
+const specs = require('./swaggerOptions');  // Substitua pelo caminho correto para o seu arquivo Swagger options
+const campanhaController = require('./campanhaController');
+
+// Rotas da Campanha
+router.get('/campanhas', campanhaController.getCampanhas);
+router.get('/campanhas/:id', campanhaController.getCampanhaById);
+router.post('/campanhas', campanhaController.createCampanha);
+router.put('/campanhas/:id', campanhaController.updateCampanha);
+router.delete('/campanhas/:id', campanhaController.deleteCampanha);
+
+//Rotas da Paciente
+
+// Rota do Swagger
+router.use('/docs', swaggerUi.serve);
+router.get('/docs', swaggerUi.setup(specs));
+
+module.exports = router;
+
