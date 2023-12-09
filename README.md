@@ -19,10 +19,18 @@ Esta é uma solução para a Hackthon 1000Devs - Desafio de JavaScript / Node.js
 
 ### O desafio
 
-- Task 1.
-- Task 2.
-- ...
-- ...
+- Requisito principal:
+  - Desenvolvimento de uma API REST usando 
+Node.js que será o backend para a nossa 
+carteira digital de vacinação.
+  - A API deve fazer todas as ações de cadastro 
+e pesquisa das informações relevantes.
+
+- Atividades Extras:
+  -  Disponibilizar uma interface para 
+a API usando o SWAGGER.
+  - Criar uma interface web para a 
+aplicação.
 
 
 ### Captura de tela
@@ -44,13 +52,13 @@ Esta é uma solução para a Hackthon 1000Devs - Desafio de JavaScript / Node.js
 - Após a instalação concluida digite o comando: "npm run dev";
 - Após isto o servidor do projeto estará rodando no seu computador e você pode fazer as requisições para a API.
 
-## Meu processo
+## Nosso processo
 
 ### Construído com
 
 - Javascript
 - Node.Js
-- Sequelize
+- Swagger
 - PostgreSQL
 - Git
 
