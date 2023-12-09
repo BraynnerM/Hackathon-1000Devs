@@ -1,10 +1,10 @@
-// server.js
 import { PrismaClient } from "@prisma/client";
 import express from "express";
 import swaggerUi from "swagger-ui-express";
-const specs = require("../../swaggerOptions.js")  
+import specs from "../../swaggerOptions.js";  
 import swaggerDocument from "../../swagger.json";
-const router = require("../routes/routes.js");
+import router from "../routes/routes.js";
+
 const prisma = new PrismaClient();
 const app = express();
 const port = 3000;
