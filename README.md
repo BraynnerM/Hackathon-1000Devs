@@ -72,12 +72,12 @@ Esta é uma solução para a Hackthon 1000Devs - Desafio de JavaScript / Node.js
 
 ### Camila
 
-- Linkedin - []()
-- Github - []()
-- Frontend Mentor - []()
-- Beecrowd - []()
-- Twitter - []()
-- E-mail -[]()
+- Linkedin - [Camila Raíra S.Xavier](https://www.linkedin.com/in/camilarairaxavier/)
+- Github - [Camila Raíra S.Xavier](https://github.com/camilarairaxavier)
+- Frontend Mentor - [Camila Raíra S.Xavier]()
+- Beecrowd - [Camila Raíra S.Xavier](https://www.beecrowd.com.br/judge/pt/profile/883588)
+- Twitter - [Camila Raíra S.Xavier]()
+- E-mail -[Camila Raíra S.Xavier]()
 
 ### Karen
 
