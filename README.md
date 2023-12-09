@@ -9,11 +9,11 @@ Esta é uma solução para a Hackthon 1000Devs - Desafio de JavaScript / Node.js
   - [Captura de tela](#captura-de-tela)
   - [Links](#links)
   - [Como Rodar o projeto no seu computador](#como-rodar-o-projeto-no-seu-computador)
-- [Meu processo](#meu-processo)
+  - [Meu processo](#meu-processo)
   - [Construído com](#construído-com)   
   - [Recursos úteis](#recursos-úteis)
-- [Autor](#autor)
-- [Agradecimentos](#agradecimentos)
+  - [Autor](#autor)
+  - [Agradecimentos](#agradecimentos)
 
 ## Visão geral
 
@@ -81,12 +81,10 @@ Esta é uma solução para a Hackthon 1000Devs - Desafio de JavaScript / Node.js
 
 ### Karen
 
-- Linkedin - []()
-- Github - []()
-- Frontend Mentor - []()
-- Beecrowd - []()
-- Twitter - []()
-- E-mail -[]()
+- Linkedin - [Karen Reis](https://www.linkedin.com/in/reiskaren0228/)
+- Github - [Karen Reis](https://github.com/reiskaren0228)
+- Beecrowd - [Karen Reis](https://www.beecrowd.com.br/judge/pt/profile/872124git)
+- E-mail -[kreisdemenezes@gmail.com](mailto:kreisdemenezes@gmail.com)
 
 ### Pedro
 
