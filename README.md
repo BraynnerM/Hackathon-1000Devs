@@ -72,12 +72,12 @@ Esta é uma solução para a Hackthon 1000Devs - Desafio de JavaScript / Node.js
 
 ### Camila
 
-- Linkedin - []()
-- Github - []()
-- Frontend Mentor - []()
-- Beecrowd - []()
-- Twitter - []()
-- E-mail -[]()
+- Linkedin - [Camila Raíra S.Xavier](https://www.linkedin.com/in/camilarairaxavier/)
+- Github - [Camila Raíra S.Xavier](https://github.com/camilarairaxavier)
+- Frontend Mentor - [Camila Raíra S.Xavier]()
+- Beecrowd - [Camila Raíra S.Xavier](https://www.beecrowd.com.br/judge/pt/profile/883588)
+- Twitter - [Camila Raíra S.Xavier]()
+- E-mail -[Camila Raíra S.Xavier]()
 
 ### Karen
 
@@ -88,12 +88,10 @@ Esta é uma solução para a Hackthon 1000Devs - Desafio de JavaScript / Node.js
 
 ### Pedro
 
-- Linkedin - []()
-- Github - []()
-- Frontend Mentor - []()
-- Beecrowd - []()
-- Twitter - []()
-- E-mail -[]()
+- Linkedin - [Pedro Mattos](https://www.linkedin.com/in/pedro-mattos-09b7271b4/)
+- Github - [Pedro Mattos](https://github.com/pedromattos11)
+- Beecrowd - [Pedro Mattos](https://www.beecrowd.com.br/judge/pt/users/statistics/871357)
+- E-mail -[pedro.hmattos19@gmail.com](mailto:pedro.hmattos19@gmail.com)
 
 
 
