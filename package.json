@@ -1,12 +1,9 @@
 {
     "scripts": {
-<<<<<<< HEAD
-        "start": "node index.js"
-=======
 
         "start": "node index.js",
         "dev": "npx tsx watch src/config/server.ts"
->>>>>>> 25cecefd5e32c5945d0b3419cf90846b66184d23
+
     },
     "dependencies": {
         "pg": "^8.11.3"
