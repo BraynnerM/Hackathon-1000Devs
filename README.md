@@ -90,12 +90,10 @@ Esta é uma solução para a Hackthon 1000Devs - Desafio de JavaScript / Node.js
 
 ### Pedro
 
-- Linkedin - []()
-- Github - []()
-- Frontend Mentor - []()
-- Beecrowd - []()
-- Twitter - []()
-- E-mail -[]()
+- Linkedin - [Pedro Mattos] (https://www.linkedin.com/in/pedro-mattos-09b7271b4/)
+- Github - [Pedro Mattos] (github.com/pedromattos11)
+- Beecrowd - [Pedro Mattos] (https://www.beecrowd.com.br/judge/pt/users/statistics/871357)
+- E-mail -[pedro.hmattos19@gmail.com] (mailto:pedro.hmattos19@gmail.com)
 
 
 
