@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model campanha {
+  id_campanha    Int              @id(map: "pk_campanha")
+  descricao      String
+  data_inicio    DateTime         @db.Date
+  data_fim       DateTime         @db.Date
+  campanhavacina campanhavacina[]
+}
+
+model campanhavacina {
+  id_campanha Int
+  id_vacina   Int
+  campanha    campanha @relation(fields: [id_campanha], references: [id_campanha], onUpdate: Restrict, map: "campanhavacina_campanha")
+  vacina      vacina   @relation(fields: [id_vacina], references: [id_vacina], onUpdate: Restrict, map: "campanhavacina_vacina")
+
+  @@id([id_campanha, id_vacina], map: "pk_campanhavacina")
+}
+
+model paciente {
+  id_paciente     Int              @id(map: "pk_paciente")
+  nome            String
+  data_nascimento DateTime         @db.Date
+  vacinaaplicada  vacinaaplicada[]
+}
+
+model periodoaplicacaoano {
+  id              Int    @id(map: "pk_periodoaplicacaoano")
+  id_vacina       Int
+  qtd_ano_inicial Int
+  qtd_ano_final   Int
+  desc_ano        String
+  vacina          vacina @relation(fields: [id_vacina], references: [id_vacina], onUpdate: Restrict, map: "periodoaplicacaoano_vacina")
+}
+
+model periodoaplicacaomes {
+  id                Int    @id(map: "pk_periodoaplicacaomes")
+  id_vacina         Int
+  qtd_meses_inicial Int
+  qtd_meses_final   Int
+  desc_meses        String
+  vacina            vacina @relation(fields: [id_vacina], references: [id_vacina], onUpdate: Restrict, map: "periodoaplicacaomes_vacina")
+}
+
+model rede {
+  id_rede   Int      @id(map: "pk_rede")
+  tipo_rede String
+  vacina    vacina[]
+}
+
+model vacina {
+  id_vacina           Int                   @id(map: "pk_vacina")
+  vacina              String
+  sigla_vacina        String
+  doenca_protecao     String
+  dose                String
+  id_rede             Int
+  campanhavacina      campanhavacina[]
+  periodoaplicacaoano periodoaplicacaoano[]
+  periodoaplicacaomes periodoaplicacaomes[]
+  rede                rede                  @relation(fields: [id_rede], references: [id_rede], onUpdate: Restrict, map: "vacina_rede")
+  vacinaaplicada      vacinaaplicada[]
+}
+
+model vacinaaplicada {
+  id_paciente    Int
+  id_vacina      Int
+  data_aplicacao DateTime @db.Date
+  paciente       paciente @relation(fields: [id_paciente], references: [id_paciente], onUpdate: Restrict, map: "vacinaaplicada_paciente")
+  vacina         vacina   @relation(fields: [id_vacina], references: [id_vacina], onUpdate: Restrict, map: "vacinaaplicada_vacina")
+
+  @@id([id_paciente, id_vacina], map: "pk_vacinaaplicada")
+}
