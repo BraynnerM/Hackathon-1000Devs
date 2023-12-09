@@ -1,16 +1,12 @@
 const express = require('express');
 const app = express();
-const PORT = 
-
+const PORT = process.env.PORT || 3000;
 
 
 // Configuração das rotas
 const express = require('express');
 const database = require('./config/database');
 const routes = require('./src/routes/routes'); 
-
-const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
