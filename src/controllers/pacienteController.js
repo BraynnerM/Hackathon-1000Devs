@@ -13,7 +13,6 @@ async function getPacientes(req, res) {
 
 async function getPacienteById(req, res) {
   const { id } = req.params;
-
   try {
     const paciente = await prisma.paciente.findUnique({
       where: { id_paciente: Number(id) },

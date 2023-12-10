@@ -68,6 +68,7 @@ async function updateVacinaAplicada(req, res) {
 
   try {
     const vacinaAplicada = await prisma.vacinaAplicada.update({
+
       where: { id },
       data: dadosAtualizados,
     });
