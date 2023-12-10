@@ -37,7 +37,7 @@ import {
     createVacinaAplicada,
     updateVacinaAplicada,
     deleteVacinaAplicada
-} from '../controllers/vacinaAplicadaController';
+  } from '../controllers/vacinaAplicadaController';
 
 import {
     getCampanhaVacinas,
