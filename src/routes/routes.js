@@ -26,6 +26,7 @@ import {
 import {
     getPacientes,
     getPacienteById,
+    getPacienteByNome,
     createPaciente,
     updatePaciente,
     deletePaciente
@@ -67,6 +68,7 @@ router.delete('/campanhas/:id', deleteCampanha);
 // Rotas da Paciente
 router.get('/pacientes', getPacientes);
 router.get('/pacientes/:id', getPacienteById);
+router.get('/pacientes/nome/:nome', getPacienteByNome);
 router.post('/pacientes', createPaciente);
 router.put('/pacientes/:id', updatePaciente);
 router.delete('/pacientes/:id', deletePaciente);
@@ -76,7 +78,7 @@ router.get('/vacinas-aplicadas', getVacinasAplicadas);
 router.get('/vacinas-aplicadas/:id', getVacinaAplicadaById);
 router.post('/vacinas-aplicadas', createVacinaAplicada);
 router.put('/vacinas-aplicadas/:id', updateVacinaAplicada);
-router.delete('/vacinas-aplicadas/:id', deleteVacinaAplicada);
+router.delete('/vacinas-aplicadas/:id/:idVacina', deleteVacinaAplicada);
 
 // Rotas Campanha Vacina
 router.get('/campanhas-vacinas', getCampanhaVacinas);
