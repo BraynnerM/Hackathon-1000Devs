@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 
 async function getPeriodos(req, res) {
   try {
-    const periodos = await prisma.periodoAplicacaoMes.findMany();
+    const periodos = await prisma.periodoaplicacaomes.findMany();
     res.json(periodos);
   } catch (error) {
     console.error('Erro ao obter períodos:', error);
@@ -16,7 +16,7 @@ async function getPeriodoById(req, res) {
   const id = parseInt(req.params.id);
 
   try {
-    const periodo = await prisma.periodoAplicacaoMes.findUnique({
+    const periodo = await prisma.periodoaplicacaomes.findUnique({
       where: { id },
     });
 
@@ -35,7 +35,7 @@ async function createPeriodo(req, res) {
   const novoPeriodo = req.body;
 
   try {
-    const periodo = await prisma.periodoAplicacaoMes.create({
+    const periodo = await prisma.periodoaplicacaomes.create({
       data: novoPeriodo,
     });
 
@@ -51,7 +51,7 @@ async function updatePeriodo(req, res) {
   const dadosAtualizados = req.body;
 
   try {
-    const periodo = await prisma.periodoAplicacaoMes.update({
+    const periodo = await prisma.periodoaplicacaomes.update({
       where: { id },
       data: dadosAtualizados,
     });
@@ -67,7 +67,7 @@ async function deletePeriodo(req, res) {
   const id = parseInt(req.params.id);
 
   try {
-    await prisma.periodoAplicacaoMes.delete({
+    await prisma.periodoaplicacaomes.delete({
       where: { id },
     });
 

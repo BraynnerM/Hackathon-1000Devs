@@ -5,11 +5,21 @@ import {
     getCampanhaById,
     createCampanha,
     updateCampanha,
-    deleteCampanha
+    deleteCampanha,
+    addVacinaToCampanha,
+    removeVacinaFromCampanha,
+    getCampanhasPorData,
+    getCampanhasPorProtecao
 } from '../controllers/campanhaController';
 import {
     getVacinas,
     getVacinaById,
+    getVacinasPorAnoExato,
+    getVacinasAteIdade,
+    getVacinasAteIdadeMeses,
+    getVacinasPorMesExato,
+    getVacinasPorPaciente,
+    getVacinasPendentesPorPaciente,
     getVacinaByProtecao,
     createVacina,
     updateVacina,
@@ -37,8 +47,8 @@ import {
     getVacinaAplicadaById,
     createVacinaAplicada,
     updateVacinaAplicada,
-    deleteVacinaAplicada
-  } from '../controllers/vacinaAplicadaController';
+    deleteVacinaAplicada,
+} from '../controllers/vacinaAplicadaController';
 
 import {
     getCampanhaVacinas,
@@ -55,6 +65,14 @@ import {
     updatePeriodo,
     deletePeriodo
 } from '../controllers/periodoAplicacaoMesController';
+
+import {
+    getPeriodosAno,
+    getPeriodoAnoById,
+    createPeriodoAno,
+    updatePeriodoAno,
+    deletePeriodoAno,
+} from '../controllers/periodoAplicAnoController';
 
 const router = express.Router();
 
@@ -79,6 +97,8 @@ router.get('/vacinas-aplicadas/:id', getVacinaAplicadaById);
 router.post('/vacinas-aplicadas', createVacinaAplicada);
 router.put('/vacinas-aplicadas/:id', updateVacinaAplicada);
 router.delete('/vacinas-aplicadas/:id/:idVacina', deleteVacinaAplicada);
+router.get('/pacientes/:id_paciente/vacinas', getVacinasPorPaciente);
+router.get('/pacientes/:id_paciente/vacinas-pendentes', getVacinasPendentesPorPaciente);
 
 // Rotas Campanha Vacina
 router.get('/campanhas-vacinas', getCampanhaVacinas);
@@ -87,9 +107,26 @@ router.post('/campanhas-vacinas', createCampanhaVacina);
 router.put('/campanhas-vacinas/:id', updateCampanhaVacina);
 router.delete('/campanhas-vacinas/:id', deleteCampanhaVacina);
 
+// Rotas da Campanha
+router.get('/campanhas', getCampanhas);
+router.get('/campanhas/:id', getCampanhaById);
+router.post('/campanhas', createCampanha);
+router.put('/campanhas/:id', updateCampanha);
+router.delete('/campanhas/:id', deleteCampanha);
+router.post('/campanhas/vacina', addVacinaToCampanha);
+router.delete('/campanhas/:id_campanha/vacinas/:id_vacina', removeVacinaFromCampanha);
+router.get('/campanhas/data/:data', getCampanhasPorData);
+router.get('/campanhas/protecao/:protecao', getCampanhasPorProtecao);
+
 // Rotas da Vacina
 router.get('/vacinas', getVacinas);
 router.get('/vacinas/:id', getVacinaById);
+router.get('/vacinas-por-ano-exato/:idade', getVacinasPorAnoExato);
+router.get('/vacinas-ate-idade/:idade', getVacinasAteIdade);
+router.get('/vacinas-por-mes-exato/:idadeMeses', getVacinasPorMesExato);
+router.get('/vacinas-ate-idade-meses/:idadeMeses', getVacinasAteIdadeMeses);
+router.get('/vacinas-por-paciente/:id_paciente', getVacinasPorPaciente);
+router.get('/vacinas-pendentes/:id_paciente', getVacinasPendentesPorPaciente);
 router.get('/vacinas/protecao/:protecao', getVacinaByProtecao);
 router.post('/vacinas', createVacina);
 router.put('/vacinas/:id', updateVacina);
@@ -110,10 +147,10 @@ router.put('/periodos/:id', updatePeriodo);
 router.delete('/periodos/:id', deletePeriodo);
 
 // Rotas de Período Aplicação Ano
-router.get('/periodos', getPeriodos);
-router.get('/periodos/:id', getPeriodoById);
-router.post('/periodos', createPeriodo);
-router.put('/periodos/:id', updatePeriodo);
-router.delete('/periodos/:id', deletePeriodo);
+router.get('/periodos-ano', getPeriodosAno);
+router.get('/periodos-ano/:id', getPeriodoAnoById);
+router.post('/periodos-ano', createPeriodoAno);
+router.put('/periodos-ano/:id', updatePeriodoAno);
+router.delete('/periodos-ano/:id', deletePeriodoAno);
 
 export default router;

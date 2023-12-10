@@ -96,10 +96,12 @@ async function deleteVacinaAplicada(req, res) {
   }
 }
 
+
+
 module.exports = {
   getVacinasAplicadas,
   getVacinaAplicadaById,
   createVacinaAplicada,
   updateVacinaAplicada,
-  deleteVacinaAplicada,
+  deleteVacinaAplicada,  
 };

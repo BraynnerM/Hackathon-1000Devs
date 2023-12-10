@@ -2,86 +2,87 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-async function getPeriodos(req, res) {
+async function getPeriodosAno(req, res) {
   try {
-    const periodos = await prisma.periodoAplicacaoAno.findMany();
-    res.json(periodos);
+    const periodosAno = await prisma.periodoaplicacaoano.findMany();
+    res.json(periodosAno);
   } catch (error) {
-    console.error('Erro ao obter períodos:', error);
+    console.error('Erro ao obter períodos ano:', error);
     res.status(500).send('Erro interno do servidor');
   }
 }
 
-async function getPeriodoById(req, res) {
+async function getPeriodoAnoById(req, res) {
   const id = parseInt(req.params.id);
 
   try {
-    const periodo = await prisma.periodoAplicacaoAno.findUnique({
+    const periodoAno = await prisma.periodoaplicacaoano.findUnique({
       where: { id },
     });
 
-    if (!periodo) {
-      res.status(404).send('Período não encontrado');
+    if (!periodoAno) {
+      res.status(404).send('Período ano não encontrado');
     } else {
-      res.json(periodo);
+      res.json(periodoAno);
     }
   } catch (error) {
-    console.error('Erro ao obter período por ID:', error);
+    console.error('Erro ao obter período ano por ID:', error);
     res.status(500).send('Erro interno do servidor');
   }
 }
 
-async function createPeriodo(req, res) {
-  const novoPeriodo = req.body;
+async function createPeriodoAno(req, res) {
+  const novoPeriodoAno = req.body;
 
   try {
-    const periodo = await prisma.periodoAplicacaoAno.create({
-      data: novoPeriodo,
+    const periodoAno = await prisma.periodoaplicacaoano.create({
+      data: novoPeriodoAno,
     });
 
-    res.status(201).json(periodo);
+    res.status(201).json(periodoAno);
   } catch (error) {
-    console.error('Erro ao criar período:', error);
+    console.error('Erro ao criar período ano:', error);
     res.status(500).send('Erro interno do servidor');
   }
 }
 
-async function updatePeriodo(req, res) {
+async function updatePeriodoAno(req, res) {
   const id = parseInt(req.params.id);
-  const dadosAtualizados = req.body;
+  const dadosAtualizadosAno = req.body;
 
   try {
-    const periodo = await prisma.periodoAplicacaoAno.update({
+    const periodoAno = await prisma.periodoaplicacaoano.update({
       where: { id },
-      data: dadosAtualizados,
+      data: dadosAtualizadosAno,
     });
 
-    res.json(periodo);
+    res.json(periodoAno);
   } catch (error) {
-    console.error('Erro ao atualizar período:', error);
+    console.error('Erro ao atualizar período ano:', error);
     res.status(500).send('Erro interno do servidor');
   }
 }
 
-async function deletePeriodo(req, res) {
+async function deletePeriodoAno(req, res) {
   const id = parseInt(req.params.id);
 
   try {
-    await prisma.periodoAplicacaoAno.delete({
+    await prisma.periodoaplicacaoano.delete({
       where: { id },
     });
 
-    res.send('Período deletado com sucesso');
+    res.send('Período ano deletado com sucesso');
   } catch (error) {
-    console.error('Erro ao deletar período:', error);
+    console.error('Erro ao deletar período ano:', error);
     res.status(500).send('Erro interno do servidor');
   }
 }
 
 module.exports = {
-  getPeriodos,
-  getPeriodoById,
-  createPeriodo,
-  updatePeriodo,
-  deletePeriodo,
+  getPeriodosAno,
+  getPeriodoAnoById,
+  createPeriodoAno,
+  updatePeriodoAno,
+  deletePeriodoAno,
 };
+
