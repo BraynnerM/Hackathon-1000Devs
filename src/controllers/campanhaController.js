@@ -35,8 +35,17 @@ async function createCampanha(req, res) {
   const novaCampanha = req.body;
 
   try {
+    // Consulta para obter a quantidade de IDs já gravados na tabela
+    const countResult = await prisma.campanha.count();
+    const quantidadeDeIds = countResult;
+
+    // Criação da nova campanha usando a quantidade de IDs como parte do novo ID
+    const novoId = quantidadeDeIds + 1;
     const campanha = await prisma.campanha.create({
-      data: novaCampanha,
+      data: {
+        ...novaCampanha,
+        id_campanha: novoId,  // Supondo que o nome do campo de ID seja "id"
+      },
     });
 
     res.status(201).json(campanha);

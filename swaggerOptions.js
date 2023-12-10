@@ -4,9 +4,9 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Nome da Sua API',
+      title: 'Vacinação',
       version: '1.0.0',
-      description: 'Descrição da Sua API',
+      description: 'Api desafio da hackathon 1000devs',
     },
   },
   apis: ['./src/routes/routes.js'], 
