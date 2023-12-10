@@ -26,7 +26,7 @@ async function getVacinaAplicadaById(req, res) {
   const id = parseInt(req.params.id);
 
   try {
-    const vacinaAplicada = await prisma.vacinaAplicada.findUnique({
+    const vacinaAplicada = await prisma.vacinaaplicada.findUnique({
       where: { id },
     });
 
