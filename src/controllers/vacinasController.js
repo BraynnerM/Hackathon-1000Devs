@@ -31,6 +31,30 @@ async function getVacinaById(req, res) {
   }
 }
 
+async function getVacinaByProtecao(req, res) {
+  const { protecao } = req.params; // Obtém o valor do parâmetro da URL
+
+  try {
+    const vacinas = await prisma.vacina.findMany({
+      where: {
+        doenca_protecao: {
+          contains: protecao, // Procura por vacinas que contenham a substring do nome
+          mode: 'insensitive', // Torna a busca insensível a maiúsculas e minúsculas
+        },
+      },
+    });
+
+    if (!vacinas || vacinas.length === 0) {
+      res.status(404).send('Nenhuma vacina encontrada com esse nome');
+    } else {
+      res.json(vacinas);
+    }
+  } catch (error) {
+    console.error('Erro ao obter vacina por nome:', error);
+    res.status(500).send('Erro interno do servidor');
+  }
+}
+
 async function createVacina(req, res) {
   const novaVacina = req.body;
 
@@ -81,6 +105,7 @@ async function deleteVacina(req, res) {
 module.exports = {
   getVacinas,
   getVacinaById,
+  getVacinaByProtecao,
   createVacina,
   updateVacina,
   deleteVacina,

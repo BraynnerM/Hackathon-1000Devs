@@ -1,12 +1,7 @@
-const express = require('express');
 const { PrismaClient } = require('@prisma/client');
-
-const app = express();
 const prisma = new PrismaClient();
 
-app.use(express.json());
-
-app.get('/pacientes', async (req, res) => {
+async function getPacientes(req, res) {
   try {
     const pacientes = await prisma.paciente.findMany();
     res.status(200).json(pacientes);
@@ -14,9 +9,9 @@ app.get('/pacientes', async (req, res) => {
     console.error(error);
     res.status(404).json({ mensagem: 'Erro ao executar a consulta.' });
   }
-});
+}
 
-app.get('/pacientes/:id', async (req, res) => {
+async function getPacienteById(req, res) {
   const { id } = req.params;
 
   try {
@@ -33,9 +28,9 @@ app.get('/pacientes/:id', async (req, res) => {
     console.error(error);
     res.status(404).json({ mensagem: 'Erro ao executar a consulta.' });
   }
-});
+}
 
-app.post('/pacientes', async (req, res) => {
+async function createPaciente(req, res) {
   const { nome, data_nascimento } = req.body;
 
   try {
@@ -51,9 +46,9 @@ app.post('/pacientes', async (req, res) => {
     console.error(error);
     res.status(404).json({ mensagem: 'Erro ao inserir paciente.' });
   }
-});
+}
 
-app.put('/pacientes/:id', async (req, res) => {
+async function updatePaciente(req, res) {
   const { id } = req.params;
   const { nome, data_nascimento } = req.body;
 
@@ -71,9 +66,9 @@ app.put('/pacientes/:id', async (req, res) => {
     console.error(error);
     res.status(404).json({ mensagem: 'Erro ao atualizar paciente.' });
   }
-});
+}
 
-app.delete('/pacientes/:id', async (req, res) => {
+async function deletePaciente(req, res) {
   const { id } = req.params;
 
   try {
@@ -86,9 +81,12 @@ app.delete('/pacientes/:id', async (req, res) => {
     console.error(error);
     res.status(404).json({ mensagem: 'Erro ao excluir paciente.' });
   }
-});
+}
 
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+module.exports = {
+  getPacientes,
+  getPacienteById,
+  createPaciente,
+  updatePaciente,
+  deletePaciente,
+};
